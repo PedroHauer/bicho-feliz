@@ -1,0 +1,43 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #183b4e;
+  background: #f4f9fb;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+
+main { width: min(1100px, calc(100% - 32px)); margin: 0 auto; padding: 32px 0 64px; }
+header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+header h1 { margin: 4px 0 0; color: #146c94; font-size: clamp(2rem, 6vw, 3.5rem); }
+.eyebrow { margin: 0; color: #19a7ce; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+
+button { border: 0; border-radius: 10px; padding: 10px 16px; background: #19a7ce; color: white; font-weight: 700; }
+button:hover { filter: brightness(.92); }
+button.secondary { background: #e5eff3; color: #183b4e; }
+button.danger { background: #d84a4a; }
+
+.search { display: flex; gap: 8px; margin-bottom: 20px; }
+.search input, .pet-form input, .pet-form textarea { width: 100%; border: 1px solid #c8dce5; border-radius: 10px; padding: 11px 12px; background: white; }
+
+.pet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.pet-card { border: 1px solid #dceaf0; border-radius: 16px; padding: 20px; background: white; box-shadow: 0 8px 24px rgba(24, 59, 78, .07); }
+.pet-card h2 { margin: 12px 0 4px; }
+.pet-card p { line-height: 1.5; }
+.pet-meta { color: #19a7ce; font-weight: 800; }
+.pet-avatar { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: #dff3fa; color: #146c94; font-size: 1.5rem; font-weight: 800; }
+.card-actions, .form-actions { display: flex; gap: 8px; margin-top: 16px; }
+
+.pet-form { display: grid; gap: 12px; max-width: 640px; margin-bottom: 24px; border: 1px solid #dceaf0; border-radius: 16px; padding: 20px; background: white; }
+.pet-form h2 { margin: 0 0 4px; }
+.pet-form label { display: grid; gap: 6px; font-weight: 700; }
+.pet-form textarea { min-height: 96px; resize: vertical; }
+.error { border-left: 4px solid #d84a4a; padding: 10px 12px; background: #fff1f1; }
+
+@media (max-width: 620px) {
+  header { align-items: flex-start; gap: 12px; }
+  .search { flex-direction: column; }
+}
