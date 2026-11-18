@@ -1,91 +1,15 @@
-# Bicho Feliz
+# Petshop – Gerenciamento de Vacinas (projeto didático)
 
-Aplicação didática dividida em Backend e Frontend para praticar testes unitários e testes de componentes.
+Dois projetos independentes para a atividade de testes unitários:
 
-## Projetos
+- `petshop-backend/` – API REST (Node.js, Express, SQLite). Porta 3001.
+- `petshop-frontend/` – interface React (Vite). Porta 5173.
 
-- `backend`: API REST em Node.js, Express e SQLite local.
-- `frontend`: interface em React e Vite.
-
-Os projetos não usam autenticação, pagamentos, agendamentos ou APIs externas. Não há testes implementados; os scripts `npm test` foram deixados prontos para uso didático.
-
-## Como executar
-
-### Backend
+Em dois terminais:
 
 ```bash
-cd backend
-npm install
-npm run reset-db
-npm start
+cd petshop-backend  && npm install && npm start
+cd petshop-frontend && npm install && npm run dev
 ```
 
-API: `http://localhost:3001/api`
-
-Endpoints principais:
-
-- `GET /api/pets`
-- `GET /api/pets?search=termo`
-- `GET /api/pets/:id`
-- `POST /api/pets`
-- `PUT /api/pets/:id`
-- `DELETE /api/pets/:id`
-
-### Frontend
-
-Em outro terminal:
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Interface: `http://localhost:5173`
-
-## Pré-requisitos
-
-- Node.js 24 ou superior
-- npm
-
-## Reinicialização do banco
-
-```bash
-cd backend
-npm run reset-db
-```
-
-## Testes
-
-Execute separadamente em cada projeto:
-
-```bash
-npm test
-```
-
-## Estrutura
-
-```text
-bicho-feliz/
-├── backend/
-│   ├── src/
-│   │   ├── app.js
-│   │   ├── database.js
-│   │   ├── petRepository.js
-│   │   ├── petRules.js
-│   │   ├── resetDatabase.js
-│   │   ├── seed.js
-│   │   └── server.js
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── api.js
-│   │   ├── App.jsx
-│   │   ├── mockData.js
-│   │   ├── PetCard.jsx
-│   │   ├── PetForm.jsx
-│   │   └── main.jsx
-│   ├── index.html
-│   └── package.json
-└── README.md
-```
+Abra http://localhost:5173. Os testes automatizados **não** foram implementados: são tarefa dos alunos.
