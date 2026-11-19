@@ -39,7 +39,7 @@ describe('Formulário de cadastro de animais', () => {
     expect(screen.getByRole('button', { name: 'Salvar alterações' })).toBeInTheDocument();
   });
 
-  test('clicar em "Cadastrar animal" com o formulário vazio deve mostrar as mensagens de validação e não chamar onSalvar', async () => {
+  test('Teste 11 (interação) – clicar em "Cadastrar animal" com o formulário vazio deve mostrar as mensagens de validação e não chamar onSalvar', async () => {
     const usuario = userEvent.setup();
     const onSalvar = jest.fn();
     render(<AnimalForm onSalvar={onSalvar} onCancelar={jest.fn()} />);
@@ -52,7 +52,7 @@ describe('Formulário de cadastro de animais', () => {
     expect(onSalvar).not.toHaveBeenCalled();
   });
 
-  test('preencher os campos e clicar em "Cadastrar animal" deve chamar onSalvar com os dados informados', async () => {
+  test('Teste 11 (interação) – preencher os campos e clicar em "Cadastrar animal" deve chamar onSalvar com os dados informados', async () => {
     const usuario = userEvent.setup();
     const onSalvar = jest.fn().mockResolvedValue(true);
     render(<AnimalForm onSalvar={onSalvar} onCancelar={jest.fn()} />);

@@ -1,7 +1,7 @@
 # Petshop Backend – Gerenciamento de Vacinas
 
 API REST simples para cadastro de animais, vacinas e registros de vacinação de um petshop.
-Projeto **didático**: foi organizado para que os alunos escrevam **testes unitários** (Jest) com base nas regras de negócio. **Nenhum teste foi implementado** – a pasta `tests/` está vazia de propósito.
+Projeto **didático**: foi organizado para que os alunos escrevam **testes unitários** (Jest) com base nas regras de negócio. Os testes do cadastro de animais estão em `tests/animalService.test.js`.
 
 ## Tecnologias
 
@@ -37,7 +37,17 @@ npm start
 npm test
 ```
 
-Como ainda não existem testes, o comando termina sem falhas. Os alunos devem criar arquivos `*.test.js` dentro de `tests/`.
+Testes implementados (`tests/animalService.test.js`):
+
+| Teste | Cenário | Resultado esperado |
+|---|---|---|
+| 01 | Cadastro com todos os dados válidos | Animal é enviado ao repositório e devolvido com `id` |
+| 02 | Cadastro sem nome | `ErroValidacao` (RN04) e nada é inserido |
+| 03 | Cadastro sem nome do tutor | `ErroValidacao` (RN05) e nada é inserido |
+| 04 | Espécie diferente de Cão, Gato ou Outro | `ErroValidacao` (RN06) e nada é inserido |
+| Complementos | Animal salvo no banco em memória; espécies permitidas aceitas; nome só com espaços; campo `nome_tutor` ausente | Reforçam os testes 01 a 04 |
+
+Os testes 01 a 04 usam um repositório falso (`jest.fn()`), por isso não dependem do banco. Cada teste cria seus próprios dados e o seu próprio service, então eles não dependem uns dos outros.
 Outros scripts: `npm run test:watch` e `npm run test:coverage`.
 
 ## Estrutura de pastas

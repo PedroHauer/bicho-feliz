@@ -12,4 +12,4 @@ cd petshop-backend  && npm install && npm start
 cd petshop-frontend && npm install && npm run dev
 ```
 
-Abra http://localhost:5173. Os testes automatizados **não** foram implementados: são tarefa dos alunos.
+Abra http://localhost:5173. Os testes automatizados estão em `petshop-backend/tests/` e `petshop-frontend/tests/` e são executados com `npm test` em cada projeto (detalhes no README de cada um).

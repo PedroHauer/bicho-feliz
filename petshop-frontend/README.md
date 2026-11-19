@@ -1,7 +1,7 @@
 # Petshop Frontend – Gerenciamento de Vacinas
 
 Interface em React (português brasileiro) que consome a API do **petshop-backend**.
-Projeto **didático**: foi organizado para que os alunos escrevam **testes de componentes** (Jest + React Testing Library). **Nenhum teste foi implementado** – a pasta `tests/` contém apenas a configuração em `tests/config/`.
+Projeto **didático**: foi organizado para que os alunos escrevam **testes de componentes** (Jest + React Testing Library). Os testes do formulário de animais estão em `tests/AnimalForm.test.jsx`.
 
 ## Tecnologias
 
@@ -36,7 +36,16 @@ Acesse **http://localhost:5173**. O Vite encaminha as chamadas `/api/...` para `
 npm test
 ```
 
-Sem testes escritos o comando termina sem falhas. Crie arquivos `*.test.jsx` (ou `.test.js`) em `tests/`.
+Testes implementados (`tests/AnimalForm.test.jsx`):
+
+| Teste | Cenário | Resultado esperado |
+|---|---|---|
+| 11a | Formulário no modo de cadastro | Campos Nome do animal, Espécie, Raça, Data de nascimento e Nome do tutor, e botão "Cadastrar animal" |
+| 11b | Formulário no modo de edição (animal com `id` nas props) | Botão "Salvar alterações" |
+| 11 (interação) | Clicar em "Cadastrar animal" com o formulário vazio | Mensagens de validação aparecem e `onSalvar` não é chamado |
+| 11 (interação) | Preencher os campos e clicar em "Cadastrar animal" | `onSalvar` é chamado com os dados digitados |
+
+Observação: o botão de salvar do `AnimalForm` se chama "Cadastrar animal" no modo de cadastro e "Salvar alterações" no modo de edição. Por isso o Teste 11 verifica os dois modos. As interações usam `@testing-library/user-event`.
 Modo interativo: `npm run test:watch`.
 
 ## Estrutura de pastas
